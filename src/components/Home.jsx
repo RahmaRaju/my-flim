@@ -4,12 +4,12 @@ import { Search, Film, Home as HomeIcon, BarChart2, Settings } from "lucide-reac
 
 const COLORS = ["#FF6B6B", "#4ECDC4", "#45B7D1", "#FFA07A", "#98D8C8", "#F06292"];
 const filmData = [
-  { name: "Barat", value: 20 },
+  { name: "Barat", value: 3 },
   { name: "India", value: 10 },
-  { name: "Indonesia", value: 15 },
-  { name: "Korea", value: 25 },
-  { name: "Kartun", value: 5 },
-  { name: "Malaysia", value: 8 },
+  { name: "Indonesia", value: 51 },
+  { name: "Korea", value: 2 },
+  { name: "Kartun", value: 3 },
+  { name: "Malaysia", value: 2 },
 ];
 
 const totalDitonton = filmData.reduce((sum, item) => sum + item.value, 0);
@@ -103,7 +103,7 @@ function Home({ onMenuClick }) {
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Statistik Penayangan</h2>
             <p className="text-white/80 max-w-2xl mx-auto">
-              Pantau kebiasaan menontonmu dan kategori favoritmu.
+              Berapa banyak film yang udah dita tonton?
             </p>
           </div>
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
@@ -119,7 +119,7 @@ function Home({ onMenuClick }) {
                     innerRadius={70}
                     outerRadius={110}
                     paddingAngle={2}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    label={({percent }) => `${(percent * 100).toFixed(0)}%`}
                     labelLine={false}
                   >
                     {filmData.map((entry, index) => (

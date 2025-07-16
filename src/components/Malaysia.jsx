@@ -1,408 +1,44 @@
-// Malaysia.jsx
 import React, { useState } from "react";
 import { Star, Clock, X } from "lucide-react";
 
 function Malaysia() {
   const [selectedFilm, setSelectedFilm] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // State for current page
-  const filmsPerPage = 20; // Number of films to display per page
+  const [currentPage, setCurrentPage] = useState(1); 
+  const filmsPerPage = 20; 
 
   const filmMalaysia = [
     {
       id: 1,
-      judul: "Ola Bola",
-      tahun: 2016,
+      judul: "Rindu Awak 200%",
+      tahun: 2017,
       rating: 4.5,
-      durasi: "1j 53m",
-      genre: ["Drama", "Sport"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/Ola_Bola_poster.jpg/220px-Ola_Bola_poster.jpg",
+      durasi: "28 Episode",
+      genre: ["Drama"],
+      gambar: "https://i.pinimg.com/736x/60/93/84/60938455165115bea5331e57eda59124.jpg",
       deskripsi:
-        "Sebuah tim sepak bola Malaysia berjuang untuk lolos ke Olimpiade Moskow 1980.",
-      director: "Chiu Keng Guan",
+        "Zill Faezrul dan Armel Aisya dijodohkan orang tua meskipun mereka kayak air dicampur minyak. Tekan-tekan, mereka nikah juga—tapi seminggu lagi kenal aja, rumah tangga udah susah. Armel akhirnya balik kampung, Zill sibuk hilang-muncul (padahal dia punya Range Rover mahal!), bikin Armel curiga banget. Drama pun dimulai salah paham, masa lalu kelam, sampai pertanyaan “siapa Zill sebenarnya?” muncul terus. Semuanya dibumbui emosi, rahasia, dan eventual baper ending yang manis. ",
+      director: "Jonathan Putra dan Ayda Jebat",
     },
     {
       id: 2,
-      judul: "The Journey",
-      tahun: 2014,
+      judul: "Meh Sandar Pada Aku",
+      tahun: 2017,
       rating: 4.3,
-      durasi: "1j 37m",
+      durasi: "28 Episode",
       genre: ["Comedy", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/The_Journey_2014_poster.jpg/220px-The_Journey_2014_poster.jpg",
+      gambar: "https://i.pinimg.com/1200x/00/e7/36/00e736a593c8be228a6036bf5e50f779.jpg",
       deskripsi:
-        "Seorang ayah konservatif menemani calon menantunya dalam perjalanan melintasi Malaysia untuk mengundang teman-teman ke pernikahan putrinya.",
-      director: "Chiu Keng Guan",
-    },
-    {
-      id: 3,
-      judul: "Munafik",
-      tahun: 2016,
-      rating: 4.0,
-      durasi: "1j 38m",
-      genre: ["Horror", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Munafik_poster.jpg/220px-Munafik_poster.jpg",
-      deskripsi:
-        "Seorang ustaz yang sedang berduka kehilangan imannya setelah kematian istrinya, dan menghadapi kekuatan supernatural.",
-      director: "Syamsul Yusof",
-    },
-    {
-      id: 4,
-      judul: "Hantu Kak Limah Balik Rumah",
-      tahun: 2010,
-      rating: 3.8,
-      durasi: "1j 40m",
-      genre: ["Comedy", "Horror"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/9/91/Hantu_Kak_Limah_Balik_Rumah_poster.jpg/220px-Hantu_Kak_Limah_Balik_Rumah_poster.jpg",
-      deskripsi:
-        "Penduduk kampung menghadapi hantu Kak Limah yang kembali menghantui mereka.",
-      director: "Mamat Khalid",
-    },
-    {
-      id: 5,
-      judul: "Adiwiraku",
-      tahun: 2017,
-      rating: 4.4,
-      durasi: "1j 30m",
-      genre: ["Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Adiwiraku_poster.jpg/220px-Adiwiraku_poster.jpg",
-      deskripsi:
-        "Berdasarkan kisah nyata, seorang guru berjuang untuk meningkatkan prestasi siswanya di sekolah pedesaan.",
-      director: "Eric Ong",
-    },
-    {
-      id: 6,
-      judul: "Polis EVO",
-      tahun: 2015,
-      rating: 4.1,
-      durasi: "1j 45m",
-      genre: ["Action", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Polis_Evo_poster.jpg/220px-Polis_Evo_poster.jpg",
-      deskripsi:
-        "Dua polisi dengan kepribadian berbeda harus bekerja sama untuk menjatuhkan gembong narkoba.",
-      director: "Ghaz Abu Bakar",
-    },
-    {
-      id: 7,
-      judul: "Pekak",
-      tahun: 2016,
-      rating: 4.2,
-      durasi: "1j 40m",
-      genre: ["Drama", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Pekak_poster.jpg/220px-Pekak_poster.jpg",
-      deskripsi:
-        "Seorang penjual narkoba tunarungu jatuh cinta dengan seorang siswa sekolah menengah, dan hidupnya berubah.",
-      director: "Mohd Khairul Azri Md Noor",
-    },
-    {
-      id: 8,
-      judul: "One Two Jaga",
-      tahun: 2018,
-      rating: 4.6,
-      durasi: "1j 40m",
-      genre: ["Crime", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/One_Two_Jaga_poster.jpg/220px-One_Two_Jaga_poster.jpg", // Reusing image as it's the same film
-      deskripsi:
-        "Menggambarkan korupsi di kepolisian dan kehidupan imigran ilegal di Kuala Lumpur.",
-      director: "Nam Ron",
-    },
-    {
-      id: 9,
-      judul: "Puteri Gunung Ledang",
-      tahun: 2004,
-      rating: 4.0,
-      durasi: "2j 30m",
-      genre: ["Adventure", "Drama", "Fantasy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Puteri_Gunung_Ledang_poster.jpg/220px-Puteri_Gunung_Ledang_poster.jpg",
-      deskripsi:
-        "Kisah epik tentang seorang putri mistis dan seorang pahlawan yang jatuh cinta padanya.",
-      director: "Saw Teong Hin",
-    },
-    {
-      id: 10,
-      judul: "Tombiruo: Penunggu Rimba",
-      tahun: 2017,
-      rating: 3.9,
-      durasi: "1j 55m",
-      genre: ["Action", "Fantasy", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Tombiruo_poster.jpg/220px-Tombiruo_poster.jpg",
-      deskripsi:
-        "Seorang pria dengan wajah cacat yang tinggal di hutan mencari keadilan setelah kematian ayahnya.",
-      director: "Seth Larney, Nasir Jani",
-    },
-    {
-      id: 11,
-      judul: "Sangkar",
-      tahun: 2019,
-      rating: 4.0,
-      durasi: "1j 40m",
-      genre: ["Action", "Drama", "Sport"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Sangkar_poster.jpg/220px-Sangkar_poster.jpg",
-      deskripsi:
-        "Dua petarung MMA menghadapi konsekuensi dari tindakan mereka di dalam dan di luar ring.",
-      director: "Kabir Bhatia",
-    },
-    {
-      id: 12,
-      judul: "Crossroads: One Two Jaga",
-      tahun: 2018,
-      rating: 4.1,
-      durasi: "1j 40m",
-      genre: ["Crime", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/One_Two_Jaga_poster.jpg/220px-One_Two_Jaga_poster.jpg", // Reusing image as it's the same film
-      deskripsi:
-        "Menggambarkan korupsi di kepolisian dan kehidupan imigran ilegal di Kuala Lumpur.",
-      director: "Nam Ron",
-    },
-    {
-      id: 13,
-      judul: "Paskal",
-      tahun: 2018,
-      rating: 4.3,
-      durasi: "1j 55m",
-      genre: ["Action", "Drama", "War"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Paskal_poster.jpg/220px-Paskal_poster.jpg",
-      deskripsi:
-        "Berdasarkan kisah nyata, tim PASKAL (Pasukan Khas Laut) Angkatan Laut Malaysia melakukan misi penyelamatan.",
-      director: "Adrian Teh",
-    },
-    {
-      id: 14,
-      judul: "Wira",
-      tahun: 2019,
-      rating: 4.0,
-      durasi: "1j 30m",
-      genre: ["Action", "Crime", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Wira_poster.jpg/220px-Wira_poster.jpg",
-      deskripsi:
-        "Seorang mantan tentara kembali ke rumah untuk menyelamatkan keluarganya dari rentenir yang kejam.",
-      director: "Adrian Teh",
-    },
-    {
-      id: 15,
-      judul: "Roh",
-      tahun: 2020,
-      rating: 4.2,
-      durasi: "1j 23m",
-      genre: ["Horror", "Mystery"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Roh_poster.jpg/220px-Roh_poster.jpg",
-      deskripsi:
-        "Sebuah keluarga yang tinggal di hutan terpencil menghadapi serangkaian peristiwa aneh setelah bertemu seorang gadis misterius.",
-      director: "Emir Ezwan",
-    },
-    {
-      id: 16,
-      judul: "Mael Totey The Movie",
-      tahun: 2020,
-      rating: 3.7,
-      durasi: "1j 30m",
-      genre: ["Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Mael_Totey_The_Movie_poster.jpg/220px-Mael_Totey_The_Movie_poster.jpg",
-      deskripsi:
-        "Mael Totey, seorang pria polos dengan niat baik, mencoba membantu orang-orang di sekitarnya.",
-      director: "Syahmi Sazli",
-    },
-    {
-      id: 17,
-      judul: "Jagat",
-      tahun: 2015,
-      rating: 4.4,
-      durasi: "1j 25m",
-      genre: ["Crime", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Jagat_poster.jpg/220px-Jagat_poster.jpg",
-      deskripsi:
-        "Kisah seorang anak laki-laki India-Malaysia yang tumbuh di lingkungan kejahatan dan kemiskinan di tahun 90-an.",
-      director: "Shanjhey Kumar Perumal",
-    },
-    {
-      id: 18,
-      judul: "Guang",
-      tahun: 2018,
-      rating: 4.3,
-      durasi: "1j 30m",
-      genre: ["Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Guang_poster.jpg/220px-Guang_poster.jpg",
-      deskripsi:
-        "Seorang pria muda dengan autisme berjuang untuk menemukan pekerjaan dan mengejar mimpinya dalam musik.",
-      director: "Quek Shio Chuan",
-    },
-    {
-      id: 19,
-      judul: "Mukhsin",
-      tahun: 2006,
-      rating: 4.0,
-      durasi: "1j 35m",
-      genre: ["Drama", "Romance"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Mukhsin_poster.jpg/220px-Mukhsin_poster.jpg",
-      deskripsi:
-        "Kisah cinta pertama antara seorang anak laki-laki dan seorang gadis di desa Malaysia pada tahun 1970-an.",
-      director: "Yasmin Ahmad",
-    },
-    {
-      id: 20,
-      judul: "Talentime",
-      tahun: 2009,
-      rating: 4.1,
-      durasi: "2j 0m",
-      genre: ["Drama", "Music", "Romance"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Talentime_poster.jpg/220px-Talentime_poster.jpg",
-      deskripsi:
-        "Siswa-siswi dari berbagai latar belakang bersaing dalam kompetisi bakat di sekolah.",
-      director: "Yasmin Ahmad",
-    },
-    {
-      id: 21,
-      judul: "Mat Kilau: Kebangkitan Pahlawan",
-      tahun: 2022,
-      rating: 4.0,
-      durasi: "1j 58m",
-      genre: ["Action", "Historical", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Mat_Kilau_Kebangkitan_Pahlawan_poster.jpg/220px-Mat_Kilau_Kebangkitan_Pahlawan_poster.jpg",
-      deskripsi:
-        "Berdasarkan kisah nyata, seorang pahlawan Melayu memimpin perlawanan melawan penjajah Inggris.",
-      director: "Syamsul Yusof",
-    },
-    {
-      id: 22,
-      judul: "Mechamato Movie",
-      tahun: 2022,
-      rating: 3.9,
-      durasi: "1j 40m",
-      genre: ["Animation", "Action", "Sci-Fi"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Mechamato_Movie_poster.jpg/220px-Mechamato_Movie_poster.jpg",
-      deskripsi:
-        "Seorang anak laki-laki bernama Amato menemukan robot bernama Mechabot dan menjadi pahlawan yang melawan robot jahat.",
-      director: "Nizam Razak",
-    },
-    {
-      id: 23,
-      judul: "Air Force The Movie: Selagi Bernyawa",
-      tahun: 2022,
-      rating: 4.1,
-      durasi: "1j 50m",
-      genre: ["Action", "Drama", "War"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Air_Force_The_Movie_Selagi_Bernyawa_poster.jpg/220px-Air_Force_The_Movie_Selagi_Bernyawa_poster.jpg",
-      deskripsi:
-        "Tentara Angkatan Udara Malaysia melakukan misi berbahaya untuk menyelamatkan sandera.",
-      director: "Zulkarnain Azhar",
-    },
-    {
-      id: 24,
-      judul: "Dukun",
-      tahun: 2018,
-      rating: 4.0,
-      durasi: "1j 45m",
-      genre: ["Horror", "Thriller", "Crime"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Dukun_poster.jpg/220px-Dukun_poster.jpg",
-      deskripsi:
-        "Seorang pengacara harus membela seorang dukun yang dituduh melakukan pembunuhan ritual.",
-      director: "Dain Said",
-    },
-    {
-      id: 25,
-      judul: "Pulang",
-      tahun: 2018,
-      rating: 3.8,
-      durasi: "2j 0m",
-      genre: ["Drama", "Historical"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b3/Pulang_poster.jpg/220px-Pulang_poster.jpg",
-      deskripsi:
-        "Kisah seorang wanita yang mencari suaminya yang hilang setelah dia pergi berlayar pada tahun 1940-an.",
-      director: "Kabir Bhatia",
-    },
-    {
-      id: 26,
-      judul: "Upin & Ipin: Keris Siamang Tunggal",
-      tahun: 2019,
-      rating: 4.2,
-      durasi: "1j 40m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Upin_%26_Ipin_Keris_Siamang_Tunggal_poster.jpg/220px-Upin_%26_Ipin_Keris_Siamang_Tunggal_poster.jpg",
-      deskripsi:
-        "Upin dan Ipin bersama teman-teman mereka memulai petualangan di dunia fantasi untuk menyelamatkan kerajaan.",
-      director: "Ahmad Razuri Roseli, Adam Amiruddin, Syed Nurfaiz Khalid Syed Putra",
-    },
-    {
-      id: 27,
-      judul: "Ejen Ali The Movie",
-      tahun: 2019,
-      rating: 4.1,
-      durasi: "1j 35m",
-      genre: ["Animation", "Action", "Sci-Fi"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Ejen_Ali_The_Movie_poster.jpg/220px-Ejen_Ali_The_Movie_poster.jpg",
-      deskripsi:
-        "Ali, seorang agen muda M.A.T.A., menemukan rahasia yang mengancam kota Cyberaya.",
-      director: "Usamah Zaid Yasin",
-    },
-    {
-      id: 28,
-      judul: "BoBoiBoy Movie 2",
-      tahun: 2019,
-      rating: 4.0,
-      durasi: "1j 30m",
-      genre: ["Animation", "Action", "Sci-Fi"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/BoBoiBoy_Movie_2_poster.jpg/220px-BoBoiBoy_Movie_2_poster.jpg",
-      deskripsi:
-        "BoBoiBoy dan teman-temannya harus menghentikan penjahat kuat yang ingin mencuri kekuatan elemennya.",
-      director: "Nizam Razak",
-    },
-    {
-      id: 29,
-      judul: "Coast Guard Malaysia: Ops Helang",
-      tahun: 2023,
-      rating: 3.7,
-      durasi: "1j 45m",
-      genre: ["Action", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Coast_Guard_Malaysia_Ops_Helang_poster.jpg/220px-Coast_Guard_Malaysia_Ops_Helang_poster.jpg",
-      deskripsi:
-        "Kisah tentang tim Penjaga Pantai Malaysia dalam misi penyelamatan dan penegakan hukum.",
-      director: "Lie Chee Teong",
-    },
-    {
-      id: 30,
-      judul: "Didi & Friends The Movie",
-      tahun: 2023,
-      rating: 3.5,
-      durasi: "1j 20m",
-      genre: ["Animation", "Family", "Musical"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Didi_%26_Friends_The_Movie_poster.jpg/220px-Didi_%26_Friends_The_Movie_poster.jpg",
-      deskripsi:
-        "Didi dan teman-temannya memulai petualangan untuk menemukan harta karun tersembunyi.",
-      director: "Akmal Aziz, Hairulfaizalizwan Ahmad",
-    },
-    {
-      id: 31,
-      judul: "Anwar: The Untold Story",
-      tahun: 2023,
-      rating: 3.9,
-      durasi: "1j 40m",
-      genre: ["Biography", "Drama", "History"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/Anwar_The_Untold_Story_poster.jpg/220px-Anwar_The_Untold_Story_poster.jpg",
-      deskripsi:
-        "Mengisahkan perjalanan politik dan perjuangan Anwar Ibrahim.",
-      director: "Viva Westi",
-    },
-    {
-      id: 32,
-      judul: "Rahsia",
-      tahun: 2023,
-      rating: 3.8,
-      durasi: "1j 30m",
-      genre: ["Horror", "Mystery"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Rahsia_poster.jpg/220px-Rahsia_poster.jpg",
-      deskripsi:
-        "Sebuah keluarga menghadapi teror supernatural setelah pindah ke rumah baru.",
-      director: "Shamyl Othman",
+        "Afnan, gadis ceria tapi polos, harus kerja bareng Dr. Syed yang galak dan dingin. Awalnya saling benci, tapi lama-lama tumbuh rasa. Masalah makin rumit pas mereka jadi saudara tiri dan dijodohkan dengan orang lain. Di tengah drama dan luka lama, cinta akhirnya menang.",
+      director: "Emi Suffian",
     },
   ];
 
-  // Calculate total pages
   const totalPages = Math.ceil(filmMalaysia.length / filmsPerPage);
 
-  // Get current films to display
   const indexOfLastFilm = currentPage * filmsPerPage;
   const indexOfFirstFilm = indexOfLastFilm - filmsPerPage;
   const currentFilms = filmMalaysia.slice(indexOfFirstFilm, indexOfLastFilm);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const RatingStars = ({ rating }) => {
@@ -496,10 +132,10 @@ function Malaysia() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text">
-            Koleksi Film Malaysia
+            Film Malaysia
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Temukan pilihan film-film terbaik dari Malaysia
+             Yok Tambah Koleksi Tontonan Lagi Yok!!!
           </p>
         </header>
 

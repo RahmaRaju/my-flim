@@ -16,7 +16,7 @@ function India() {
       genre: ["Komedi", "Drama", "Romantis"],
       gambar: "https://i.scdn.co/image/ab67616d0000b273b8e928fe24553b093c038224",
       deskripsi:
-        "Film india pertama yang diriku tonton. Sebenarnya ini film drama biasa, cinta segitiga, agak repot karna si pretty ini anak hasil perselingkuhan, lagunya enak enak aku hapal semua, pemainnya jugak ganteng-ganteng dan cantik-cantik, cukup rekomen buat yang mau nonton film yang santai.",
+        "Film ini tentang Shalu, cewek ceria, usil, dan apa adanya. Dia sering dibandingkan dengan kakaknya, Nimmi, yang kalem dan penurut. Tapi ternyata, Shalu bukan anak kandung — dia hasil dari masa lalu kelam sang ibu. Hubungannya sama kakaknya, Nimmi, jadi rumit pas mereka jatuh cinta sama cowok yang sama, Dev. Di tengah konflik cinta dan keluarga, Shalu harus memilih: nurutin hati sendiri atau jaga perasaan orang-orang yang dia sayang.",
       director: "Kundan Shah",
     },
     {
@@ -28,7 +28,7 @@ function India() {
       genre: ["Drama", "Romantis"],
       gambar: "https://upload.wikimedia.org/wikipedia/en/0/07/Kuch_Kuch_Hota_Hai_poster.jpg",
       deskripsi:
-        "Film jelek dan bodoh, pertama anak kecilnya pick me iyuhh, kedua anjeli goblok dah dapat cowok kaya ganteng cinta mati sama dia malah di tinggalin, nikah sama duda anak satu hadehh sia sia ukt kuliah dia. Si rahul spek buaya darat tingkat tinggi, mana cewek yang cantik itu yang dia mau, dulu anjeli jelek sama tina dia, dah cantik anjeli mau lak sama anjeli, lagunya pun ndak enak enak kali, mending gak usah di tonton nambah dosa memaki maki ni pilem.",
+        "Rahul dan Anjali sahabatan akrab banget, tapi Rahul malah naksir Tina, cewek baru di kampus. Anjali patah hati dan pergi. Beberapa tahun kemudian, anak Rahul berusaha nyatuin lagi ayahnya sama Anjali. Ceritanya tentang cinta pertama dan kedua, tapi buat sebagian orang, kisahnya terasa klise dan agak terlalu dramatis.",
       director: "Yash Johar",
     },
     {
@@ -40,7 +40,7 @@ function India() {
       genre: ["Romantis", "Drama", "Keluarga"],
       gambar: "https://images.justwatch.com/poster/327110642/s718/kabhi-khushi-kabhie-gham.jpg",
       deskripsi:
-        "Banyak yang menangis dengan pilem ini, tapi diriku B aja, jadi rahul ni anak angkat, mo di jodohin, padahal ceweknya cantik kaya, kalau aku ndak mikir cinta, cinta tumbuh karna terbiasa, apalah ni, nah si rahul jatuh cinta ama cewek desa, bapake marah ndak setuju, kawin lari si rahul, marah bapek kenak usir dia, lalu bertahun tahun adeke sudah besar, adeke mau menyatukan keluarganya kembali, lagu paling enaknya bolee chudiyan",
+        "Rahul, anak sulung dari keluarga super kaya, jatuh cinta sama Anjali, cewek sederhana dari keluarga biasa. Ayahnya nggak setuju, tapi Rahul tetap nikah sama Anjali dan akhirnya “diusir” dari keluarga. Bertahun-tahun kemudian, si adik, Rohan, coba nyatuin mereka lagi. Ceritanya campur aduk: ada cinta, konflik keluarga, air mata, dan gaya mewah.",
       director: "Karaan Johar",
     },
     {
@@ -52,8 +52,8 @@ function India() {
       genre: ["Drama", "Romantis"],
       gambar: "https://upload.wikimedia.org/wikipedia/id/9/94/Mohabbatein.jpg",
       deskripsi:
-        "Nah ni asik, drama cinta muda mudi kehalang karna hidup di asrama yang super ketat tambahlak emang ada bumbu maslah asmara masing masing. Sukak, pande lak tukang pilemnya cari pasangan, mereka pasangannya sama-sama cocok dengan karakter masing-masing ada yang ceria, ada yang hot ada yang tipe cinta drama kali kek anak alay jatuhnya tapi tetap enak di tonton. Lagu -lagunya jugak enak-enak.",
-      director: "Aamir Khan, Amole Gupte",
+        "Di sekolah super ketat yang dipimpin kepala sekolah galak bernama Narayan (Amitabh Bachchan), cinta dilarang keras. Tapi datanglah Raj (Shah Rukh Khan), guru musik santai yang percaya kalau cinta itu kekuatan paling besar. Tiga murid jatuh cinta diam-diam, dan Raj bantu mereka melawan aturan kaku sekolah. Di balik itu, Raj punya masa lalu sendiri yang nyambung sama anak kepala sekolah. ",
+      director: "Aditya Chopra",
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ function India() {
       genre: ["Romantis", "Drama"],
       gambar: "https://upload.wikimedia.org/wikipedia/id/a/ab/Mujhse_Dosti_Karoge_Film_Poster.jpg",
       deskripsi:
-        "Salah satu pilem india yang membuat kita memaki-maki pilemnya. intinya pemain cowoknya jugak pindah pindah cewek, daei tina tu ke si pooja, tidak untuk di contoh adik-adik!. Tapi lagu pilemnya enak-enak yang main jugak ganteng dan cantik jadi yang tertolong dibanding kuch kuch hota hai.",
+        "Raj suka banget sama Tina, tapi selama bertahun-tahun dia malah kirim email ke Pooja, yang nyamar jadi Tina. Pas Raj pulang ke India dan akhirnya ketemu mereka berdua, dia masih mikir Tina itu cinta sejatinya. Padahal yang nyambung banget sama dia ya si Pooja. Jadilah cinta segitiga yang penuh salah paham, tangisan, dan adegan slow motion.",
       director: "Kunal Kohli",
     },
     {
@@ -76,7 +76,7 @@ function India() {
       genre: ["Romantis", "Drama"],
       gambar: "https://upload.wikimedia.org/wikipedia/id/a/a7/Kaho_Naa_Pyaar_Hai_Poster.jpg",
       deskripsi:
-        "Filemnya enak, tidak seperti alur-alur pilem india jaman dahulu lainnya. Lagu-lagunya jugak enak, cuma emangpemeran wanitanya kurang terkenal dibanding pemeran wanita pilem pilem lain, cuma akting dia gak jelek kok cocok ama pemeran cowoknya.",
+        "Rohit, cowok sederhana yang doyan nyanyi, jatuh cinta sama Sonia, cewek kaya raya. Mereka pacaran bahagia... sampai Rohit tiba-tiba tewas karena jadi saksi pembunuhan. Sonia yang hancur hati pergi ke luar negeri, lalu shock karena ketemu cowok yang wajahnya persis banget kayak Rohit — namanya Raj. Nah, dari situ mulai deh muncul drama balas dendam, misteri, dan cinta yang kedua.",
       director: "Rakesh Roshan",
     },
     {
@@ -88,7 +88,7 @@ function India() {
       genre: ["Drama", "Romantis", "Keluarga", "Komedi"],
       gambar: "https://m.media-amazon.com/images/S/pv-target-images/a6b8ec019c41f87698ba4c7d0dbfc0a2692673c333af954a1d4ba096cad59bcc.jpg",
       deskripsi:
-        "Filemnya sebenarnya B aja, tapi sukak sama para pemainnya lagu-lagunya jugak enak, cuma di filemnya jugak si cowok tetap sayang sama istrinya walaupun udah nikah lagi, yang si ceweknya jugak gak menye menye tambah dia jugak ada lucu-lucunya jadi gak bosan nontonnya. ",
+        "Film ini tentang pasangan kaya, Raj dan Priya, yang pengen banget punya anak tapi Priya nggak bisa hamil. Diam-diam mereka sewa seorang wanita bernama Madhu buat jadi ibu pengganti. Awalnya cuma urusan “profesional,” tapi makin lama jadi ribet karena Madhu mulai jatuh cinta sama Raj. Drama pun muncul di antara cinta, keluarga, dan rahasia besar yang harus disembunyikan dari semua orang.",
       director: "Abbas & Mustan Burmawalla",
     },
     {
@@ -100,8 +100,20 @@ function India() {
       genre: ["Romantis", "Drama", "Keluarga", "Sedih"],
       gambar: "https://m.media-amazon.com/images/S/pv-target-images/f562d69b3441745019a0dc05ae37198a213f96e46d21bacd010b76e8593d26d5.jpg",
       deskripsi:
-        "Salah satu pilem rekomen untuk di tonton. Satu tema ceritanya bagus, jarang jarang pilem ngangkat kisah cinta orang tua walupun dah tua, pilemnya emang sedih walupun agak ngutuk ngutuk ke anak anaknya tapi puas banget waktu anak angkatnya emang benar benar nyangjung orang tuanya, kalau gak salah ceritanya gak diangkat dari kisah nyata tapi dikisah nyata banyak kejadian kayak gini jadi ya berasa beneran nyata filemnya.",
+        "Raj dan Pooja, pasangan suami istri yang udah tua tapi romantis banget, berharap bisa menikmati masa tua bareng anak-anak mereka. Tapi kenyataannya... anak-anak mereka malah egois dan nggak mau ngurus orangtuanya. Raj dan Pooja harus hidup terpisah dan ngalamin pahitnya diabaikan sama keluarga sendiri. Film ini juga nunjukin kalau nggak semua anak itu jahat — kadang yang bukan darah daging justru lebih sayang dari keluarga sendiri.",
       director: "Ravi Chopra",
+    },
+    {
+      id: 9,
+      judul: "",
+      tahun: 2003,
+      rating: 4.7,
+      durasi: "j m",
+      genre: ["Romantis", "Drama", "Keluarga", "Sedih"],
+      gambar: "",
+      deskripsi:
+        "",
+      director: "",
     },
   ];
 
@@ -207,7 +219,7 @@ function India() {
             Film India
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Yok Tambah Koleksi Tontontonan Lagi Yok!!!
+            Yok Tambah Koleksi Tontonan Lagi Yok!!!
           </p>
         </header>
 

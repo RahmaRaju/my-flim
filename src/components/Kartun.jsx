@@ -1,408 +1,56 @@
-// Kartun.jsx
 import React, { useState } from "react";
 import { Star, Clock, X } from "lucide-react";
 
 function Kartun() {
   const [selectedFilm, setSelectedFilm] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // State for current page
-  const filmsPerPage = 20; // Number of films to display per page
+  const [currentPage, setCurrentPage] = useState(1); 
+  const filmsPerPage = 20; 
 
   const filmKartun = [
     {
       id: 1,
-      judul: "Toy Story",
-      tahun: 1995,
-      rating: 4.8,
-      durasi: "1j 21m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Toy_Story.jpg/220px-Toy_Story.jpg",
+      judul: "Frozen",
+      tahun: 2013,
+      rating: 4.0,
+      durasi: "1j 42m",
+      genre: ["Animasi", "Adventure", "Musikal"],
+      gambar: "https://i.pinimg.com/736x/a3/eb/f3/a3ebf3feaf61fcffa4d40092cc421759.jpg",
       deskripsi:
-        "Mainan-mainan Andy menjadi hidup saat dia tidak ada, dan Woody si koboi merasa terancam dengan kedatangan mainan baru, Buzz Lightyear.",
-      director: "John Lasseter",
+        "Elsa, si kakak, punya kekuatan es yang luar biasa tapi dia sembunyikan karena takut nyakitin orang, termasuk adiknya sendiri, Anna. Tapi saat kekuatannya nggak sengaja bikin seluruh kerajaan jadi musim dingin abadi, Elsa kabur ke gunung dan bikin istana es kece. Anna pun nekat nyusul sambil ditemani cowok lucu bernama Kristoff, rusa setia Sven, dan si boneka salju kocak Olaf.",
+      director: "Peter Del Vecho",
     },
     {
       id: 2,
-      judul: "The Lion King",
-      tahun: 1994,
-      rating: 4.7,
-      durasi: "1j 28m",
-      genre: ["Animation", "Adventure", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/The_Lion_King_poster.jpg/220px-The_Lion_King_poster.jpg",
+      judul: "Frozen 2",
+      tahun: 2019,
+      rating: 4.5,
+      durasi: "1j 43m",
+      genre: ["Animasi", "Adventure", "Fantasi"],
+      gambar: "https://i.pinimg.com/736x/78/cb/68/78cb6843e1736683780c8b9c9b150557.jpg",
       deskripsi:
-        "Simba, seekor singa muda, melarikan diri setelah kematian ayahnya dan harus kembali untuk merebut kembali takhtanya.",
-      director: "Roger Allers, Rob Minkoff",
+        "Elsa mulai denger suara misterius yang manggil-manggil dari hutan ajaib. Bareng Anna, Kristoff, Olaf, dan Sven, mereka berpetualang keluar dari Arendelle buat cari tahu asal-usul kekuatan Elsa dan rahasia masa lalu keluarga mereka. Perjalanan kali ini lebih gelap dan serius penuh teka-teki, sihir alam, dan pilihan sulit yang harus dihadapi Elsa.",
+      director: "Jennifer Lee",
     },
     {
       id: 3,
-      judul: "Spirited Away",
-      tahun: 2001,
-      rating: 4.9,
-      durasi: "2j 5m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Spirited_Away_poster.png/220px-Spirited_Away_poster.png",
-      deskripsi:
-        "Seorang gadis muda tersesat di dunia roh dan harus bekerja di pemandian untuk menyelamatkan orang tuanya.",
-      director: "Hayao Miyazaki",
-    },
-    {
-      id: 4,
-      judul: "Finding Nemo",
-      tahun: 2003,
-      rating: 4.6,
-      durasi: "1j 40m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Finding_Nemo.jpg/220px-Finding_Nemo.jpg",
-      deskripsi:
-        "Seorang ayah ikan badut melakukan perjalanan melintasi samudra untuk menemukan putranya yang hilang.",
-      director: "Andrew Stanton, Lee Unkrich",
-    },
-    {
-      id: 5,
-      judul: "Up",
-      tahun: 2009,
-      rating: 4.7,
-      durasi: "1j 36m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Up_%282009_film%29.jpg/220px-Up_%282009_film%29.jpg",
-      deskripsi:
-        "Seorang duda tua mewujudkan impian seumur hidupnya dengan mengikat ribuan balon ke rumahnya dan terbang ke Amerika Selatan.",
-      director: "Pete Docter, Bob Peterson",
-    },
-    {
-      id: 6,
-      judul: "Zootopia",
-      tahun: 2016,
-      rating: 4.5,
-      durasi: "1j 48m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Zootopia.jpg/220px-Zootopia.jpg",
-      deskripsi:
-        "Seekor kelinci polisi bekerja sama dengan rubah penipu untuk mengungkap konspirasi di kota hewan.",
-      director: "Byron Howard, Rich Moore",
-    },
-    {
-      id: 7,
-      judul: "Coco",
-      tahun: 2017,
-      rating: 4.8,
-      durasi: "1j 45m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Coco_%282017_film%29_poster.jpg/220px-Coco_%282017_film%29_poster.jpg",
-      deskripsi:
-        "Seorang anak laki-laki muda yang bercita-cita menjadi musisi melakukan perjalanan ke Tanah Orang Mati untuk menemukan kakek buyutnya.",
-      director: "Lee Unkrich, Adrian Molina",
-    },
-    {
-      id: 8,
-      judul: "Inside Out",
-      tahun: 2015,
-      rating: 4.7,
-      durasi: "1j 35m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Inside_Out_%282015_film%29_poster.jpg/220px-Inside_Out_%282015_film%29_poster.jpg",
-      deskripsi:
-        "Perasaan seorang gadis muda berjuang untuk membimbingnya melalui kehidupan setelah pindah ke kota baru.",
-      director: "Pete Docter, Ronnie del Carmen",
-    },
-    {
-      id: 9,
-      judul: "How to Train Your Dragon",
-      tahun: 2010,
-      rating: 4.6,
-      durasi: "1j 38m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/How_to_Train_Your_Dragon_Poster.jpg/220px-How_to_Train_Your_Dragon_Poster.jpg",
-      deskripsi:
-        "Seorang remaja Viking yang canggung berteman dengan naga yang terluka, menantang tradisi sukunya.",
-      director: "Dean DeBlois, Chris Sanders",
-    },
-    {
-      id: 10,
-      judul: "Moana",
-      tahun: 2016,
-      rating: 4.4,
-      durasi: "1j 47m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Moana_poster_2016.jpg/220px-Moana_poster_2016.jpg",
-      deskripsi:
-        "Seorang putri Polinesia berlayar untuk menyelamatkan rakyatnya dengan bantuan dewa Maui.",
-      director: "Ron Clements, John Musker",
-    },
-    {
-      id: 11,
-      judul: "Frozen",
-      tahun: 2013,
-      rating: 4.3,
-      durasi: "1j 42m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Frozen_%282013_film%29_poster.jpg/220px-Frozen_%282013_film%29_poster.jpg",
-      deskripsi:
-        "Seorang putri memulai perjalanan untuk menemukan saudara perempuannya yang memiliki kekuatan es, yang telah menjebak kerajaan dalam musim dingin abadi.",
-      director: "Chris Buck, Jennifer Lee",
-    },
-    {
-      id: 12,
-      judul: "Despicable Me",
-      tahun: 2010,
-      rating: 4.2,
-      durasi: "1j 35m",
-      genre: ["Animation", "Comedy", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Despicable_Me_poster.jpg/220px-Despicable_Me_poster.jpg",
-      deskripsi:
-        "Seorang penjahat super Gru berencana mencuri bulan, tetapi rencananya terganggu oleh tiga gadis yatim piatu.",
-      director: "Pierre Coffin, Chris Renaud",
-    },
-    {
-      id: 13,
-      judul: "Shrek",
-      tahun: 2001,
-      rating: 4.5,
-      durasi: "1j 30m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Shrek_poster.jpg/220px-Shrek_poster.jpg",
-      deskripsi:
-        "Seorang ogre yang suka menyendiri harus menyelamatkan seorang putri untuk mendapatkan kembali rawa-rawanya.",
-      director: "Andrew Adamson, Vicky Jenson",
-    },
-    {
-      id: 14,
-      judul: "Spider-Man: Into the Spider-Verse",
-      tahun: 2018,
-      rating: 4.9,
-      durasi: "1j 57m",
-      genre: ["Animation", "Action", "Adventure"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Spider-Man-_Into_the_Spider-Verse_poster.jpg/220px-Spider-Man-_Into_the_Spider-Verse_poster.jpg",
-      deskripsi:
-        "Miles Morales menjadi Spider-Man di alam semesta alternatif dan bergabung dengan Spider-People dari dimensi lain untuk menyelamatkan semua realitas.",
-      director: "Bob Persichetti, Peter Ramsey, Rodney Rothman",
-    },
-    {
-      id: 15,
-      judul: "Klaus",
-      tahun: 2019,
-      rating: 4.7,
-      durasi: "1j 36m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Klaus_poster.jpeg/220px-Klaus_poster.jpeg",
-      deskripsi:
-        "Seorang tukang pos egois berteman dengan pembuat mainan Klaus, dan membawa kebahagiaan ke kota yang suram.",
-      director: "Sergio Pablos",
-    },
-    {
-      id: 16,
-      judul: "Paddington 2",
-      tahun: 2017,
-      rating: 4.8,
-      durasi: "1j 43m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Paddington_2_poster.png/220px-Paddington_2_poster.png",
-      deskripsi:
-        "Beruang Paddington dituduh mencuri buku pop-up dan harus membuktikan dirinya tidak bersalah.",
-      director: "Paul King",
-    },
-    {
-      id: 17,
-      judul: "Toy Story 3",
-      tahun: 2010,
-      rating: 4.8,
-      durasi: "1j 43m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/6/69/Toy_Story_3_poster.jpg/220px-Toy_Story_3_poster.jpg",
-      deskripsi:
-        "Mainan-mainan Andy secara tidak sengaja dikirim ke tempat penitipan anak saat dia bersiap kuliah.",
-      director: "Lee Unkrich",
-    },
-    {
-      id: 18,
-      judul: "The Incredibles",
-      tahun: 2004,
-      rating: 4.6,
-      durasi: "1j 55m",
-      genre: ["Animation", "Action", "Adventure"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/The_Incredibles_poster.jpg/220px-The_Incredibles_poster.jpg",
-      deskripsi:
-        "Sebuah keluarga pahlawan super yang menyembunyikan identitas mereka dipaksa untuk beraksi lagi untuk menyelamatkan dunia.",
-      director: "Brad Bird",
-    },
-    {
-      id: 19,
       judul: "Ratatouille",
       tahun: 2007,
-      rating: 4.7,
+      rating: 4.0,
       durasi: "1j 51m",
-      genre: ["Animation", "Comedy", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/RatatouillePoster.jpg/220px-RatatouillePoster.jpg",
+      genre: ["Animasi", "Adventure", "Keluarga"],
+      gambar: "https://i.pinimg.com/736x/75/90/34/759034a833a01aa289fd7a60b0391ed5.jpg",
       deskripsi:
-        "Seekor tikus bernama Remy bercita-cita menjadi koki hebat di Paris.",
-      director: "Brad Bird, Jan Pinkava",
-    },
-    {
-      id: 20,
-      judul: "Wall-E",
-      tahun: 2008,
-      rating: 4.8,
-      durasi: "1j 38m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/WALL-Eposter.jpg/220px-WALL-Eposter.jpg",
-      deskripsi:
-        "Robot pembersih sampah terakhir di Bumi jatuh cinta pada robot pencari dan mengikutinya ke luar angkasa.",
-      director: "Andrew Stanton",
-    },
-    {
-      id: 21,
-      judul: "Tangled",
-      tahun: 2010,
-      rating: 4.3,
-      durasi: "1j 40m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Tangled_poster.jpg/220px-Tangled_poster.jpg",
-      deskripsi:
-        "Rapunzel, seorang putri dengan rambut ajaib yang sangat panjang, melarikan diri dari menara untuk melihat dunia.",
-      director: "Nathan Greno, Byron Howard",
-    },
-    {
-      id: 22,
-      judul: "Howl's Moving Castle",
-      tahun: 2004,
-      rating: 4.8,
-      durasi: "1j 59m",
-      genre: ["Animation", "Adventure", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Howls-moving-castle-poster.jpg/220px-Howls-moving-castle-poster.jpg",
-      deskripsi:
-        "Seorang gadis muda dikutuk menjadi tua dan mencari kastil bergerak penyihir untuk mematahkan kutukan.",
-      director: "Hayao Miyazaki",
-    },
-    {
-      id: 23,
-      judul: "Big Hero 6",
-      tahun: 2014,
-      rating: 4.5,
-      durasi: "1j 42m",
-      genre: ["Animation", "Action", "Adventure"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Big_Hero_6_%28poster%29.jpg/220px-Big_Hero_6_%28poster%29.jpg",
-      deskripsi:
-        "Seorang jenius robotika muda membentuk tim pahlawan super dengan robot tiupnya untuk memecahkan misteri.",
-      director: "Don Hall, Chris Williams",
-    },
-    {
-      id: 24,
-      judul: "Your Name.",
-      tahun: 2016,
-      rating: 4.8,
-      durasi: "1j 46m",
-      genre: ["Animation", "Drama", "Fantasy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0b/Your_Name_poster.png/220px-Your_Name_poster.png",
-      deskripsi:
-        "Seorang gadis desa dan anak laki-laki Tokyo menemukan bahwa mereka bertukar tubuh dalam mimpi.",
-      director: "Makoto Shinkai",
-    },
-    {
-      id: 25,
-      judul: "Kung Fu Panda",
-      tahun: 2008,
-      rating: 4.4,
-      durasi: "1j 32m",
-      genre: ["Animation", "Action", "Adventure"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/7/76/KungFuPandaPoster.jpg/220px-KungFuPandaPoster.jpg",
-      deskripsi:
-        "Seekor panda canggung yang merupakan penggemar kung fu ditakdirkan untuk menjadi Dragon Warrior.",
-      director: "Mark Osborne, John Stevenson",
-    },
-    {
-      id: 26,
-      judul: "Encanto",
-      tahun: 2021,
-      rating: 4.5,
-      durasi: "1j 42m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Encanto_poster.jpg/220px-Encanto_poster.jpg",
-      deskripsi:
-        "Seorang gadis muda di Kolombia yang merupakan satu-satunya anggota keluarganya tanpa kekuatan magis, berjuang untuk menyelamatkan keajaiban mereka.",
-      director: "Jared Bush, Byron Howard",
-    },
-    {
-      id: 27,
-      judul: "Sing 2",
-      tahun: 2021,
-      rating: 4.0,
-      durasi: "1j 50m",
-      genre: ["Animation", "Comedy", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Sing_2_poster.jpg/220px-Sing_2_poster.jpg",
-      deskripsi:
-        "Buster Moon dan teman-temannya harus meyakinkan bintang rock legendaris untuk bergabung dengan pertunjukan baru mereka.",
-      director: "Garth Jennings",
-    },
-    {
-      id: 28,
-      judul: "Minions: The Rise of Gru",
-      tahun: 2022,
-      rating: 3.9,
-      durasi: "1j 27m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Minions_The_Rise_of_Gru_poster.jpg/220px-Minions_The_Rise_of_Gru_poster.jpg",
-      deskripsi:
-        "Kisah asal-usul Gru muda dan bagaimana dia menjadi penjahat super.",
-      director: "Kyle Balda, Brad Ableson",
-    },
-    {
-      id: 29,
-      judul: "Puss in Boots: The Last Wish",
-      tahun: 2022,
-      rating: 4.6,
-      durasi: "1j 42m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Puss_in_Boots_The_Last_Wish_poster.jpg/220px-Puss_in_Boots_The_Last_Wish_poster.jpg",
-      deskripsi:
-        "Puss in Boots menemukan bahwa dia hanya memiliki satu dari sembilan nyawanya yang tersisa, dan memulai perjalanan untuk menemukan Bintang Harapan.",
-      director: "Joel Crawford",
-    },
-    {
-      id: 30,
-      judul: "The Super Mario Bros. Movie",
-      tahun: 2023,
-      rating: 4.1,
-      durasi: "1j 32m",
-      genre: ["Animation", "Adventure", "Comedy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/The_Super_Mario_Bros._Movie_poster.jpg/220px-The_Super_Mario_Bros._Movie_poster.jpg",
-      deskripsi:
-        "Dua tukang ledeng Brooklyn, Mario dan Luigi, tersedot ke dunia jamur yang aneh dan harus menyelamatkan seorang putri.",
-      director: "Aaron Horvath, Michael Jelenic",
-    },
-    {
-      id: 31,
-      judul: "Elemental",
-      tahun: 2023,
-      rating: 4.0,
-      durasi: "1j 41m",
-      genre: ["Animation", "Comedy", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Elemental_poster.jpg/220px-Elemental_poster.jpg",
-      deskripsi:
-        "Di kota di mana elemen-elemen hidup berdampingan, seorang wanita api dan seorang pria air menemukan bahwa mereka memiliki lebih banyak kesamaan daripada yang mereka kira.",
-      director: "Peter Sohn",
-    },
-    {
-      id: 32,
-      judul: "Spider-Man: Across the Spider-Verse",
-      tahun: 2023,
-      rating: 4.9,
-      durasi: "2j 20m",
-      genre: ["Animation", "Action", "Adventure"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Spider-Man-_Across_the_Spider-Verse_poster.jpg/220px-Spider-Man-_Across_the_Spider-Verse_poster.jpg",
-      deskripsi:
-        "Miles Morales melintasi Multiverse, di mana ia bertemu tim Spider-People yang bertanggung jawab untuk melindungi keberadaannya.",
-      director: "Joaquim Dos Santos, Kemp Powers, Justin K. Thompson",
+        "Remy, tikus kecil yang jago masak, punya mimpi jadi chef di restoran mewah di Paris. Masalahnya? Dia tikus, dan dunia manusia nggak bakal nerima koki berkumis panjang kayak dia. Tapi nasib mempertemukannya dengan Linguini, tukang cuci piring yang nggak bisa masak. Mereka pun kerja sama, Remy ngumpet di topi, ngatur gerakan Linguini kayak boneka dan bikin masakan yang bikin semua orang kagum.",
+      director: "Brad Lewis",
     },
   ];
 
-  // Calculate total pages
   const totalPages = Math.ceil(filmKartun.length / filmsPerPage);
 
-  // Get current films to display
   const indexOfLastFilm = currentPage * filmsPerPage;
   const indexOfFirstFilm = indexOfLastFilm - filmsPerPage;
   const currentFilms = filmKartun.slice(indexOfFirstFilm, indexOfLastFilm);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const RatingStars = ({ rating }) => {
@@ -496,10 +144,10 @@ function Kartun() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text">
-            Koleksi Film Kartun
+            Film Kartun
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Temukan pilihan film-film kartun terbaik yang menghibur dan penuh makna
+            Yok Tambah Koleksi Tontonan Lagi Yok!!!
           </p>
         </header>
 

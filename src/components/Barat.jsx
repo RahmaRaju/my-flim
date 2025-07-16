@@ -14,8 +14,8 @@ function Barat() {
       rating: 4.6,
       durasi: "1j 55m",
       genre: ["Kejahatan", "Laga", "Perampokan", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/id/thumb/c/c7/Now_You_See_Me_Poster.jpg/250px-Now_You_See_Me_Poster.jpg",
-      deskripsi: "Filmnya keren, ini termasuk film barat pertama yang aku tonton, jadi filmnya tu tentang sulap,mereka ini sekelompok 4 orang, 3 cowok 1 cewek, nah mereka tu mencuri dengan trick sulap kayak permainan kartu, hipnotis dan lain lain, mereka berempat ini dikumpulin oleh suatu agency gitu, jadi ya mereka berkerja untuk agency itu.",
+      gambar: "https://i.pinimg.com/1200x/42/d6/35/42d635f627ab3ef0af39946b757cd729.jpg",
+      deskripsi: "Empat pesulap hebat membentuk kelompok The Four Horsemen dan melakukan aksi spektakuler: merampok bank secara langsung di atas panggung. Aksi mereka menarik perhatian FBI, tapi para pesulap selalu selangkah lebih maju dengan trik mencengangkan. Di balik semua itu, tersembunyi misi misterius yang lebih besar dari sekadar pertunjukan sulap.",
       director: "Louis Leterrier",
     },
     {
@@ -25,8 +25,8 @@ function Barat() {
       rating: 4.7,
       durasi: "2j 9m",
       genre: ["Kejahatan", "Laga", "Perampokan"],
-      gambar: "https://upload.wikimedia.org/wikipedia/id/9/9a/Now_You_See_Me_2_poster.jpg",
-      deskripsi: "Nah sebenarnya kalau dari segi flim nya ini lebih keren dibanding pertama, baik itu dari akting, gambar, alur cerita, plot twist nya jugak keren, tapi aku pribadi lebih suka pemeran cewek yang di film pertama, mereka tetap berempat, cuma sekarang polisi yang sebelumnya jugak bantu mereka dalam misinya, adegan paling keren itu ada di saat mereka nyuri chipnya, secara keseluruhan flimnya masih sama tentang pencurian dengan sulap.",
+      gambar: "https://i.pinimg.com/1200x/64/a4/fd/64a4fdf6564dc075e1a4862c87eb7746.jpg",
+      deskripsi: "Setahun setelah aksi terakhir mereka, The Four Horsemen kembali dengan misi baru. Namun kali ini, mereka dijebak oleh miliarder jenius yang memaksa mereka mencuri teknologi rahasia. Dalam pertarungan antara ilusi dan intrik, para pesulap harus menggunakan trik terbaik mereka untuk membalikkan keadaan dan mengungkap kebenaran.",
       director: "Jon M.Chu",
     },
     {
@@ -36,8 +36,8 @@ function Barat() {
       rating: 4.0,
       durasi: "2j 14m",
       genre: ["Misteri", "Drama", "Kejahatan"],
-      gambar: "https://upload.wikimedia.org/wikipedia/id/6/64/Cruellaposter2021.jpg",
-      deskripsi: "Film nya tu tentang pembalasan dendam si cruella untuk mamaknya, cuma di film ini pembalasan dendamnya tu berjalan sempurna jadi agak kurang greget, kayak ujungnya kita dah tau kalau si cruella ni menang, cuma endingnya jugak agak nganu, cuma filmnya bagus, baju baju yang dia buat unik-unik, adegan yang ikonik desain baju dia yang dibakar tapi gak terbakar, apaan dah tu.",
+      gambar: "https://i.pinimg.com/1200x/10/b7/1b/10b71b813167aec755f4c52c06eeb344.jpg",
+      deskripsi: "Film ini nyeritain awal mula Cruella de Vil sebelum jadi penjahat terkenal di 101 Dalmatians. Dulu dia cewek muda kreatif bernama Estella yang suka banget sama dunia fashion. Tapi setelah ngalamin kejadian pahit, dia berubah jadi Cruella — sosok nyentrik, pemberani, dan penuh gaya yang siap bikin dunia fashion heboh!",
       director: "Craig Gillespie",
     },
   ];
@@ -145,7 +145,7 @@ function Barat() {
             Koleksi Film Barat
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Yok Tambah Koleksi Tontontonan Lagi Yok!!!
+            Yok Tambah Koleksi Tontonan Lagi Yok!!!
           </p>
         </header>
 

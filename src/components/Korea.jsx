@@ -1,408 +1,44 @@
-// Korea.jsx
 import React, { useState } from "react";
 import { Star, Clock, X } from "lucide-react";
 
 function Korea() {
   const [selectedFilm, setSelectedFilm] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1); // State for current page
-  const filmsPerPage = 20; // Number of films to display per page
+  const [currentPage, setCurrentPage] = useState(1); 
+  const filmsPerPage = 20; 
 
   const filmKorea = [
     {
       id: 1,
-      judul: "Parasite",
-      tahun: 2019,
+      judul: "Descantes of The Sun",
+      tahun: 2016,
       rating: 4.9,
-      durasi: "2j 12m",
-      genre: ["Comedy", "Drama", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Parasite_%282019_film%29.png/220px-Parasite_%282019_film%29.png",
+      durasi: "16 Episode",
+      genre: ["Aksi", "Drama", "Romantis"],
+      gambar: "https://i.pinimg.com/736x/d2/f8/f3/d2f8f337141797e0f6c4a915251fe516.jpg",
       deskripsi:
-        "Sebuah keluarga miskin menyusup ke dalam rumah tangga kaya, yang mengarah pada konsekuensi tak terduga.",
-      director: "Bong Joon-ho",
+        "Yoo Si-jin, seorang kapten pasukan khusus Korea Selatan, jatuh cinta sama Kang Mo-yeon, dokter cantik dan berdedikasi tinggi. Tapi kisah cinta mereka nggak mulus, karena profesi mereka sama-sama berisiko — Si-jin harus pergi misi militer ke tempat berbahaya, sementara Mo-yeon tetap bertugas menyelamatkan nyawa di rumah sakit. Mereka dipertemukan lagi di daerah konflik bernama Urk, tempat di mana cinta, nyawa, dan tugas saling bertabrakan. Di tengah gempa bumi, wabah penyakit, dan misi militer, cinta mereka diuji habis-habisan.",
+      director: "Kim Eun-sook & Won-Suk Kim",
     },
     {
       id: 2,
-      judul: "Oldboy",
-      tahun: 2003,
-      rating: 4.7,
-      durasi: "2j 0m",
+      judul: "While You Were Sleeping",
+      tahun: 2017,
+      rating: 4.0,
+      durasi: "32 Episode",
       genre: ["Action", "Drama", "Mystery"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Oldboy_poster.jpg/220px-Oldboy_poster.jpg",
+      gambar: "https://i.pinimg.com/736x/81/eb/bb/81ebbb5cfad0f8fd2f4b3a92e9f5945b.jpg",
       deskripsi:
-        "Seorang pria dipenjara selama 15 tahun tanpa alasan, kemudian dibebaskan dan diberi waktu lima hari untuk mencari tahu mengapa.",
-      director: "Park Chan-wook",
-    },
-    {
-      id: 3,
-      judul: "Train to Busan",
-      tahun: 2016,
-      rating: 4.6,
-      durasi: "1j 58m",
-      genre: ["Action", "Horror", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/Train_to_Busan_poster.jpg/220px-Train_to_Busan_poster.jpg",
-      deskripsi:
-        "Penumpang kereta api berjuang untuk bertahan hidup dari wabah zombie yang tiba-tiba.",
-      director: "Yeon Sang-ho",
-    },
-    {
-      id: 4,
-      judul: "Memories of Murder",
-      tahun: 2003,
-      rating: 4.8,
-      durasi: "2j 12m",
-      genre: ["Crime", "Drama", "Mystery"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/44/Memories_of_Murder.jpg/220px-Memories_of_Murder.jpg",
-      deskripsi:
-        "Dua detektif berusaha memecahkan serangkaian pembunuhan berantai di kota kecil Korea.",
-      director: "Bong Joon-ho",
-    },
-    {
-      id: 5,
-      judul: "A Tale of Two Sisters",
-      tahun: 2003,
-      rating: 4.4,
-      durasi: "1j 54m",
-      genre: ["Drama", "Horror", "Mystery"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/A_Tale_of_Two_Sisters_poster.jpg/220px-A_Tale_of_Two_Sisters_poster.jpg",
-      deskripsi:
-        "Dua saudara perempuan menghadapi serangkaian peristiwa mengganggu setelah pulang dari rumah sakit jiwa.",
-      director: "Kim Jee-woon",
-    },
-    {
-      id: 6,
-      judul: "The Handmaiden",
-      tahun: 2016,
-      rating: 4.7,
-      durasi: "2j 25m",
-      genre: ["Drama", "Romance", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/The_Handmaiden.png/220px-The_Handmaiden.png",
-      deskripsi:
-        "Seorang penipu merekrut seorang pelayan untuk membantu mencuri warisan seorang wanita bangsawan, namun rencananya berantakan.",
-      director: "Park Chan-wook",
-    },
-    {
-      id: 7,
-      judul: "Burning",
-      tahun: 2018,
-      rating: 4.5,
-      durasi: "2j 27m",
-      genre: ["Drama", "Mystery", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Burning_%282018_film%29_poster.png/220px-Burning_%282018_film%29_poster.png",
-      deskripsi:
-        "Seorang penulis muda bertemu dengan teman lama dan pria misterius yang mengungkapkan hobi aneh.",
-      director: "Lee Chang-dong",
-    },
-    {
-      id: 8,
-      judul: "Spring, Summer, Fall, Winter... and Spring",
-      tahun: 2003,
-      rating: 4.7,
-      durasi: "1j 43m",
-      genre: ["Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Spring_Summer_Fall_Winter_and_Spring.jpg/220px-Spring_Summer_Fall_Winter_and_Spring.jpg",
-      deskripsi:
-        "Kisah seorang biksu Buddha yang hidup di kuil terpencil di danau, tumbuh melalui berbagai musim kehidupan.",
-      director: "Kim Ki-duk",
-    },
-    {
-      id: 9,
-      judul: "Okja",
-      tahun: 2017,
-      rating: 4.4,
-      durasi: "2j 0m",
-      genre: ["Action", "Adventure", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Okja_poster.jpeg/220px-Okja_poster.jpeg",
-      deskripsi:
-        "Seorang gadis muda mempertaruhkan segalanya untuk mencegah sebuah perusahaan multinasional menculik teman terbaiknya, seekor babi super raksasa.",
-      director: "Bong Joon-ho",
-    },
-    {
-      id: 10,
-      judul: "I Saw the Devil",
-      tahun: 2010,
-      rating: 4.6,
-      durasi: "2j 24m",
-      genre: ["Action", "Crime", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/I_Saw_the_Devil_poster.jpg/220px-I_Saw_the_Devil_poster.jpg",
-      deskripsi:
-        "Seorang agen rahasia bertekad membalas dendam terhadap pembunuh berantai yang bertanggung jawab atas kematian tunangannya.",
-      director: "Kim Jee-woon",
-    },
-    {
-      id: 11,
-      judul: "The Wailing",
-      tahun: 2016,
-      rating: 4.5,
-      durasi: "2j 36m",
-      genre: ["Horror", "Mystery", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/The_Wailing_poster.jpg/220px-The_Wailing_poster.jpg",
-      deskripsi:
-        "Seorang polisi menyelidiki serangkaian pembunuhan aneh dan penyakit di desa terpencilnya.",
-      director: "Na Hong-jin",
-    },
-    {
-      id: 12,
-      judul: "Sympathy for Mr. Vengeance",
-      tahun: 2002,
-      rating: 4.3,
-      durasi: "2j 9m",
-      genre: ["Action", "Crime", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Sympathy_for_Mr._Vengeance_poster.jpg/220px-Sympathy_for_Mr._Vengeance_poster.jpg",
-      deskripsi:
-        "Seorang pria tuli menculik seorang anak untuk mendapatkan uang untuk transplantasi ginjal saudara perempuannya, yang memicu lingkaran kekerasan.",
-      director: "Park Chan-wook",
-    },
-    {
-      id: 13,
-      judul: "Snowpiercer",
-      tahun: 2013,
-      rating: 4.6,
-      durasi: "2j 6m",
-      genre: ["Action", "Drama", "Sci-Fi"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Snowpiercer_poster.jpg/220px-Snowpiercer_poster.jpg",
-      deskripsi:
-        "Di masa depan pasca-apokaliptik, sisa-sisa umat manusia hidup di kereta yang terus bergerak di sekitar bumi.",
-      director: "Bong Joon-ho",
-    },
-    {
-      id: 14,
-      judul: "Tae Guk Gi: The Brotherhood of War",
-      tahun: 2004,
-      rating: 4.7,
-      durasi: "2j 20m",
-      genre: ["Action", "Drama", "War"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Taegukgi_poster.jpg/220px-Taegukgi_poster.jpg",
-      deskripsi:
-        "Dua saudara dipaksa untuk bertempur dalam Perang Korea, dan ikatan mereka diuji oleh kekejaman perang.",
-      director: "Kang Je-gyu",
-    },
-    {
-      id: 15,
-      judul: "The Man from Nowhere",
-      tahun: 2010,
-      rating: 4.5,
-      durasi: "1j 59m",
-      genre: ["Action", "Crime", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/The_Man_from_Nowhere_poster.jpg/220px-The_Man_from_Nowhere_poster.jpg",
-      deskripsi:
-        "Seorang mantan agen khusus berusaha menyelamatkan seorang gadis kecil yang merupakan satu-satunya temannya, setelah dia diculik oleh kartel narkoba.",
-      director: "Lee Jeong-beom",
-    },
-    {
-      id: 16,
-      judul: "A Moment to Remember",
-      tahun: 2004,
-      rating: 4.5,
-      durasi: "2j 24m",
-      genre: ["Drama", "Romance"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/A_Moment_to_Remember.jpg/220px-A_Moment_to_Remember.jpg",
-      deskripsi:
-        "Kisah cinta seorang wanita muda dan pria yang menikah, namun sang wanita menderita Alzheimer.",
-      director: "John H. Lee",
-    },
-    {
-      id: 17,
-      judul: "Miracle in Cell No. 7",
-      tahun: 2013,
-      rating: 4.8,
-      durasi: "2j 7m",
-      genre: ["Comedy", "Drama", "Family"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Miracle_in_Cell_No._7_poster.jpg/220px-Miracle_in_Cell_No._7_poster.jpg",
-      deskripsi:
-        "Seorang ayah penyandang disabilitas mental secara salah dipenjara karena pembunuhan, dan putrinya berusaha keras untuk membersihkan namanya.",
-      director: "Lee Hwan-kyung",
-    },
-    {
-      id: 18,
-      judul: "My Sassy Girl",
-      tahun: 2001,
-      rating: 4.4,
-      durasi: "2j 17m",
-      genre: ["Comedy", "Romance"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/My_Sassy_Girl_movie_poster.jpg/220px-My_Sassy_Girl_movie_poster.jpg",
-      deskripsi:
-        "Seorang mahasiswa yang baik hati bertemu dengan seorang gadis yang eksentrik dan menawan, yang mengubah hidupnya.",
-      director: "Kwak Jae-yong",
-    },
-    {
-      id: 19,
-      judul: "Sunny",
-      tahun: 2011,
-      rating: 4.6,
-      durasi: "2j 2m",
-      genre: ["Comedy", "Drama"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Sunny_%282011_film%29_poster.jpg/220px-Sunny_%282011_film%29_poster.jpg",
-      deskripsi:
-        "Sekelompok teman sekolah menengah bersatu kembali 25 tahun kemudian untuk memenuhi janji masa muda mereka.",
-      director: "Kang Hyeong-cheol",
-    },
-    {
-      id: 20,
-      judul: "The Host",
-      tahun: 2006,
-      rating: 4.3,
-      durasi: "1j 59m",
-      genre: ["Action", "Drama", "Horror"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/1/1d/The_Host_film_poster.jpg/220px-The_Host_film_poster.jpg",
-      deskripsi:
-        "Sebuah keluarga berjuang untuk menyelamatkan putri mereka yang diculik oleh monster sungai yang bermutasi.",
-      director: "Bong Joon-ho",
-    },
-    {
-      id: 21,
-      judul: "Along With the Gods: The Two Worlds",
-      tahun: 2017,
-      rating: 4.5,
-      durasi: "2j 19m",
-      genre: ["Action", "Drama", "Fantasy"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/9/91/Along_With_the_Gods_The_Two_Worlds.jpg/220px-Along_With_the_Gods_The_Two_Worlds.jpg",
-      deskripsi:
-        "Seorang petugas pemadam kebakaran yang tewas dalam tugas dibawa ke alam baka untuk diadili selama 49 hari.",
-      director: "Kim Yong-hwa",
-    },
-    {
-      id: 22,
-      judul: "Confession of Murder",
-      tahun: 2012,
-      rating: 4.2,
-      durasi: "1j 59m",
-      genre: ["Action", "Crime", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Confession_of_Murder_poster.jpg/220px-Confession_of_Murder_poster.jpg",
-      deskripsi:
-        "Seorang detektif yang tidak pernah menangkap pembunuh berantai kembali beraksi ketika pembunuh tersebut menerbitkan buku otobiografi.",
-      director: "Jung Byung-gil",
-    },
-    {
-      id: 23,
-      judul: "The Chaser",
-      tahun: 2008,
-      rating: 4.6,
-      durasi: "2j 5m",
-      genre: ["Action", "Crime", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/02/The_Chaser_%282008_film%29.jpg/220px-The_Chaser_%282008_film%29.jpg",
-      deskripsi:
-        "Seorang mantan detektif yang menjadi germo mengejar seorang pembunuh berantai yang menculik gadis-gadisnya.",
-      director: "Na Hong-jin",
-    },
-    {
-      id: 24,
-      judul: "Architecture 101",
-      tahun: 2012,
-      rating: 4.0,
-      durasi: "1j 58m",
-      genre: ["Drama", "Romance"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/Architecture_101.jpg/220px-Architecture_101.jpg",
-      deskripsi:
-        "Seorang arsitek membantu cinta pertamanya membangun kembali rumah impiannya, yang membangkitkan kenangan masa lalu.",
-      director: "Lee Yong-ju",
-    },
-    {
-      id: 25,
-      judul: "Miss Granny",
-      tahun: 2014,
-      rating: 4.3,
-      durasi: "2j 4m",
-      genre: ["Comedy", "Fantasy", "Music"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Miss_Granny_poster.jpg/220px-Miss_Granny_poster.jpg",
-      deskripsi:
-        "Seorang wanita tua secara ajaib kembali ke usia dua puluhan, dan bergabung dengan band cucunya.",
-      director: "Hwang Dong-hyuk",
-    },
-    {
-      id: 26,
-      judul: "A Taxi Driver",
-      tahun: 2017,
-      rating: 4.7,
-      durasi: "2j 17m",
-      genre: ["Drama", "History"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/A_Taxi_Driver.jpeg/220px-A_Taxi_Driver.jpeg",
-      deskripsi:
-        "Seorang sopir taksi di Seoul secara tidak sengaja terlibat dalam Gwangju Uprising tahun 1980.",
-      director: "Jang Hoon",
-    },
-    {
-      id: 27,
-      judul: "The Attorney",
-      tahun: 2013,
-      rating: 4.7,
-      durasi: "2j 7m",
-      genre: ["Drama", "History"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/The_Attorney_poster.jpg/220px-The_Attorney_poster.jpg",
-      deskripsi:
-        "Seorang pengacara pajak yang materialistis menjadi pembela hak asasi manusia setelah terlibat dalam kasus penyiksaan mahasiswa.",
-      director: "Yang Woo-suk",
-    },
-    {
-      id: 28,
-      judul: "Ode to My Father",
-      tahun: 2014,
-      rating: 4.6,
-      durasi: "2j 6m",
-      genre: ["Drama", "History"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Ode_to_My_Father_poster.jpg/220px-Ode_to_My_Father_poster.jpg",
-      deskripsi:
-        "Kisah seorang pria yang mengabdikan hidupnya untuk keluarganya selama periode sulit dalam sejarah Korea.",
-      director: "Yoon Je-kyoon",
-    },
-    {
-      id: 29,
-      judul: "The Unjust",
-      tahun: 2010,
-      rating: 4.4,
-      durasi: "1j 59m",
-      genre: ["Crime", "Drama", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/The_Unjust_poster.jpg/220px-The_Unjust_poster.jpg",
-      deskripsi:
-        "Seorang detektif korup dan seorang jaksa ambisius terjerat dalam jaringan kejahatan dan korupsi.",
-      director: "Ryoo Seung-wan",
-    },
-    {
-      id: 30,
-      judul: "Peninsula",
-      tahun: 2020,
-      rating: 3.9,
-      durasi: "1j 56m",
-      genre: ["Action", "Horror", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Peninsula_film.jpg/220px-Peninsula_film.jpg",
-      deskripsi:
-        "Empat tahun setelah wabah zombie, seorang mantan tentara dikirim kembali ke semenanjung yang sekarang sepi untuk misi berbahaya.",
-      director: "Yeon Sang-ho",
-    },
-    {
-      id: 31,
-      judul: "Space Sweepers",
-      tahun: 2021,
-      rating: 4.0,
-      durasi: "2j 16m",
-      genre: ["Action", "Adventure", "Sci-Fi"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Space_Sweepers_poster.jpg/220px-Space_Sweepers_poster.jpg",
-      deskripsi:
-        "Awak kapal pengumpul sampah luar angkasa menemukan robot humanoid yang mungkin merupakan senjata pemusnah massal.",
-      director: "Jo Sung-hee",
-    },
-    {
-      id: 32,
-      judul: "Exit",
-      tahun: 2019,
-      rating: 4.2,
-      durasi: "1j 43m",
-      genre: ["Action", "Comedy", "Thriller"],
-      gambar: "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Exit_film.jpg/220px-Exit_film.jpg",
-      deskripsi:
-        "Seorang pemuda yang menganggur harus menyelamatkan keluarga dan warga kota dari gas beracun misterius.",
-      director: "Lee Sang-geun",
+        "Nam Hong-joo, seorang reporter muda, punya kemampuan aneh dia bisa melihat masa depan lewat mimpi biasanya tentang kejadian buruk. Awalnya dia ngerasa nggak bisa ngapa-ngapain soal itu, sampai dia ketemu Jung Jae-chan, jaksa pemula yang juga mulai dapat mimpi serupa. Mereka pun kerja sama buat mencegah tragedi-tragedi yang muncul dalam mimpi, sambil pelan-pelan tumbuh rasa satu sama lain.",
+      director: "Park Hye-ryun",
     },
   ];
 
-  // Calculate total pages
   const totalPages = Math.ceil(filmKorea.length / filmsPerPage);
 
-  // Get current films to display
   const indexOfLastFilm = currentPage * filmsPerPage;
   const indexOfFirstFilm = indexOfLastFilm - filmsPerPage;
   const currentFilms = filmKorea.slice(indexOfFirstFilm, indexOfLastFilm);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const RatingStars = ({ rating }) => {
@@ -496,10 +132,10 @@ function Korea() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text">
-            Koleksi Film Korea
+            Film Korea
           </h1>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Temukan pilihan film-film Korea terbaik yang diakui secara kritis
+             Yok Tambah Koleksi Tontonan Lagi Yok!!!
           </p>
         </header>
 
